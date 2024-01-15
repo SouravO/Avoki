@@ -1,62 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
-        <!-- Include the datepicker CSS and JS files -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-        <!-- Include other stylesheets first -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/owl.carousel.min.css">
-        <!-- ... Other stylesheets ... -->
-    
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-        <!-- Then include Tailwind CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
-    
-        <!-- CSS here -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/owl.carousel.min.css">
-        <link rel="stylesheet" href="css/magnific-popup.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/themify-icons.css">
-        <link rel="stylesheet" href="css/nice-select.css">
-        <link rel="stylesheet" href="css/flaticon.css">
-        <link rel="stylesheet" href="css/gijgo.css">
-        <link rel="stylesheet" href="css/animate.css">
-        <link rel="stylesheet" href="css/slicknav.css">
-        <link rel="stylesheet" href="css/style.css">
-        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    </head>
 
 <head>
-    <!-- ... (your head content) ... -->
-    <header class="bg-black">
-        <ul class="flex justify-center p-3">
-            <li class="text-white">
-                <a class="text-white" href="./index.html">
-                    Home
-                </a>
-            </li>
-        </ul>
-    </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- ... Other stylesheets ... -->
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+        }
+    </style>
 </head>
 
-<body>
+<body class="h-screen">
 
-    <div class="login-container">
-        <h2>Login</h2>
-        <form id="loginForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+    <nav class="bg-black text-white p-4">   
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-white text-lg font-semibold">Avoki</a>
+            <div class="flex space-x-4">
+                <a href="index.html" class="text-white">Home</a>
+                <a href="rooms.html" class="text-white">Dates</a>
+                <a href="about.html" class="text-white">About</a>
+                <a href="contact.html" class="text-white">Contact</a>
+                
+            </div>
+        </div>
+    </nav>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+    <div class="flex items-center justify-center h-screen   ">
 
-            <button type="submit">Login</button>
-        </form>
+        <div class="bg-white p-8 shadow-ld rounded-md w-96 flex flex-col items-center justify-center">
+            <h2 class="text-2xl font-semibold mb-4">Login</h2>
+            <form id="loginForm">
+                <div class="mb-4">
+                    <label for="username" class="text-sm text-gray-600">Username:</label>
+                    <input type="text" id="username" name="username" class="w-full p-2 border rounded-md" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="password" class="text-sm text-gray-600">Password:</label>
+                    <input type="password" id="password" name="password" class="w-full p-2 border rounded-md" required>
+                </div>
+
+                <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Login</button>
+            </form>
+        </div>
+
     </div>
 
     <script>
@@ -81,4 +92,4 @@
 
 </body>
 
-</html>
+</html
