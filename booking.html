@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <!-- ... Other stylesheets ... -->
 
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <!-- Then include Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
 
@@ -31,54 +33,54 @@
 </head>
 
 <body>
-   
-        <header class="bg-black">
-            <ul class="flex justify-center p-3">
-                <li class="text-white">
-                    <a class="text-white" href="./index.html">
-                        Home
-                    </a></li>
-            </ul>
-        </header>
-    <div class="flex items-center justify-center h-screen">
 
-        <div class=" p-2">
+    <header class="bg-black">
+        <ul class="flex justify-center p-3">
+            <li class="text-white">
+                <a class="text-white" href="./index.html">
+                    Home
+                </a>
+            </li>
+        </ul>
+    </header>
+    <div class="flex items-center justify-center h-screen bg-red-500">
+        <div class="p-2 w-1/2">
+            <lottie-player src="https://lottie.host/ae411402-688a-468f-b63d-6f886e31680d/G4hzQ70xkF.json"
+                background="##fff" speed="1" style="height: 500px" loop autoplay direction="1" mode="normal">
+            </lottie-player>
+        </div>
+        <div class="p-2 w-1/2">
             <div class="bg-green-200 p-4 rounded">
                 <div class="flex justify-between mb-4">
                     <h2 class="mr-2">Select a date:</h2>
                     <h6>IST</h6>
                 </div>
-                <!-- Calendar input and time slot -->
-                <div class="flex ">
+                <div class="flex">
                     <div id="datepicker" class="rounded w-1/2"></div>
                 </div>
                 <div class="flex justify-center bg-blue-400 mt-3  rounded text-white">
-                    <button id="enquireBtn" class=" w-full">Enquire</button>
+                    <button id="enquireBtn" class="w-full">Enquire</button>
                 </div>
             </div>
         </div>
-        <div class=" p-2">
-
-        </div>
     </div>
 
-    <!-- Initialize the datepicker -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
+        // Sample blocked dates (you would fetch this from the server in a real-world scenario)
+        var blockedDates = ["2024-01-20", "2024-01-25", "2024-01-30"];
+
         flatpickr("#datepicker", {
             enableTime: false,
-            dateFormat: "d-m-y",
-            inline: true, // Display the calendar without clicking the input
+            dateFormat: "Y-m-d",
+            inline: true,
+            disable: blockedDates, // Disable the specified dates
         });
 
-        // Get the selected date and initiate WhatsApp message
         document.getElementById("enquireBtn").addEventListener("click", function () {
             var selectedDate = document.getElementById("datepicker").value;
             var message = "Hello, I would like to enquire about the availability on " + selectedDate;
-
-            // Replace with your WhatsApp number and message
             var whatsappLink = "https://wa.me/8129957753?text=" + encodeURIComponent(message);
-
-            // Open WhatsApp in a new tab
             window.open(whatsappLink, "_blank");
         });
     </script>

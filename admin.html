@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+        <!-- Include the datepicker CSS and JS files -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <!-- Include other stylesheets first -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <!-- ... Other stylesheets ... -->
+    
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <!-- Then include Tailwind CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    
+        <!-- CSS here -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/themify-icons.css">
+        <link rel="stylesheet" href="css/nice-select.css">
+        <link rel="stylesheet" href="css/flaticon.css">
+        <link rel="stylesheet" href="css/gijgo.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/slicknav.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    </head>
+
+<head>
+    <header class="bg-black">
+        <ul class="flex justify-center p-3">
+            <li class="text-white">
+                <a class="text-white" href="./index.html">
+                    Home
+                </a>
+            </li>
+        </ul>
+    </header>
+</head>
+
+<body>
+
+    <header class="bg-black">
+        <ul class="flex justify-center p-3">
+            <li class="text-white">
+                <a class="text-white" href="./index.html">
+                    Home
+                </a>
+            </li>
+            <li class="text-white">
+                <button id="logoutBtn" class="text-white">Logout</button>
+            </li>
+        </ul>
+    </header>
+
+    <div class="admin-container">
+        <h2>Admin Dashboard</h2>
+        <p>This is a protected admin page.</p>
+    </div>
+
+    <script>
+        // Check if the user is logged in
+        var isLoggedIn = localStorage.getItem("isLoggedIn");
+
+        if (!isLoggedIn) {
+            // Redirect to the login page if not logged in
+            window.location.href = "login.html";
+        }
+
+        // Logout button click event
+        document.getElementById("logoutBtn").addEventListener("click", function () {
+            // Clear the login status from local storage
+            localStorage.removeItem("isLoggedIn");
+
+            // Redirect to the login page
+            window.location.href = "login.html";
+        });
+    </script>
+
+</body>
+
+
+</html>
