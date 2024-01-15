@@ -33,7 +33,6 @@
 </head>
 
 <body>
-
     <header class="bg-black">
         <ul class="flex justify-center p-3">
             <li class="text-white">
@@ -67,14 +66,14 @@
 
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
-        // Sample blocked dates (you would fetch this from the server in a real-world scenario)
-        var blockedDates = ["2024-01-20", "2024-01-25", "2024-01-30"];
+        // Fetch booked dates from local storage
+        var bookedDates = JSON.parse(localStorage.getItem("bookedDates")) || [];
 
         flatpickr("#datepicker", {
             enableTime: false,
             dateFormat: "Y-m-d",
             inline: true,
-            disable: blockedDates, // Disable the specified dates
+            disable: bookedDates, // Disable the specified dates
         });
 
         document.getElementById("enquireBtn").addEventListener("click", function () {
@@ -85,5 +84,6 @@
         });
     </script>
 </body>
+
 
 </html>

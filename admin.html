@@ -1,56 +1,25 @@
+<!-- Admin.html -->
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
-        <!-- Include the datepicker CSS and JS files -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-        <!-- Include other stylesheets first -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/owl.carousel.min.css">
-        <!-- ... Other stylesheets ... -->
-    
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-        <!-- Then include Tailwind CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
-    
-        <!-- CSS here -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/owl.carousel.min.css">
-        <link rel="stylesheet" href="css/magnific-popup.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/themify-icons.css">
-        <link rel="stylesheet" href="css/nice-select.css">
-        <link rel="stylesheet" href="css/flaticon.css">
-        <link rel="stylesheet" href="css/gijgo.css">
-        <link rel="stylesheet" href="css/animate.css">
-        <link rel="stylesheet" href="css/slicknav.css">
-        <link rel="stylesheet" href="css/style.css">
-        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    </head>
 
 <head>
-    <header class="bg-black">
-        <ul class="flex justify-center p-3">
-            <li class="text-white">
-                <a class="text-white" href="./index.html">
-                    Home
-                </a>
-            </li>
-        </ul>
-    </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 
 <body>
-
     <header class="bg-black">
         <ul class="flex justify-center p-3">
             <li class="text-white">
-                <a class="text-white" href="./index.html">
-                    Home
-                </a>
+                <a class="text-white" href="./index.html">Home</a>
             </li>
             <li class="text-white">
                 <button id="logoutBtn" class="text-white">Logout</button>
@@ -60,29 +29,47 @@
 
     <div class="admin-container">
         <h2>Admin Dashboard</h2>
-        <p>This is a protected admin page.</p>
+        <div class="p-2">
+            <h3>Select a date for booking:</h3>
+            <input type="text" id="bookingDate" class="rounded border p-2" placeholder="Select a date">
+            <button id="bookBtn" class="bg-blue-500 text-white p-2 mt-2">Book Date</button>
+        </div>
     </div>
 
     <script>
-        // Check if the user is logged in
         var isLoggedIn = localStorage.getItem("isLoggedIn");
 
         if (!isLoggedIn) {
-            // Redirect to the login page if not logged in
             window.location.href = "login.html";
         }
 
-        // Logout button click event
         document.getElementById("logoutBtn").addEventListener("click", function () {
-            // Clear the login status from local storage
             localStorage.removeItem("isLoggedIn");
-
-            // Redirect to the login page
             window.location.href = "login.html";
         });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            flatpickr("#bookingDate", {
+                enableTime: false,
+                dateFormat: "Y-m-d",
+            });
+
+            document.getElementById("bookBtn").addEventListener("click", function () {
+                var selectedDate = document.getElementById("bookingDate").value;
+                if (selectedDate) {
+                    // Save the selected date to local storage
+                    var bookedDates = JSON.parse(localStorage.getItem("bookedDates")) || [];
+                    bookedDates.push(selectedDate);
+                    localStorage.setItem("bookedDates", JSON.stringify(bookedDates));
+
+                    // Redirect to booking.html
+                    window.location.href = "booking.html";
+                } else {
+                    alert("Please select a date for booking.");
+                }
+            });
+        });
     </script>
-
 </body>
-
 
 </html>
