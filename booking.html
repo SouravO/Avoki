@@ -5,131 +5,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Include the datepicker CSS and JS files -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- Include other stylesheets first -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- ... Other stylesheets ... -->
+
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <style>
-        /* Additional custom styles can be added here */
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: url('https://wallpapercave.com/wp/y7Mcbu2.jpg') center center fixed;
-            background-size: cover;
-        }
+    <!-- Then include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
 
-        header {
-            background-color: #1a202c;
-            color: #ffffff;
-        }
-
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-        }
-
-        .bg-green {
-            background-color: #48bb78;
-        }
-
-        .text-blue {
-            color: #2874f0;
-        }
-
-        .btn-blue {
-            background-color: #2874f0;
-            color: #ffffff;
-        }
-    </style>
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 
 <body>
-
-    <!-- Navigation Bar -->
-    <nav class="bg-black p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-white text-lg font-semibold">Avoki</a>
-            <div class="flex space-x-4">
-                <a href="index.html" class="text-white">Home</a>
-                <a href="rooms.html" class="text-white">Dates</a>
-                <a href="about.html" class="text-white">About</a>
-                <a href="contact.html" class="text-white">Contact</a>
-                
-            </div>
+    <header class="bg-black">
+        <ul class="flex justify-center p-3">
+            <li class="text-white">
+                <a class="text-white" href="./index.html">
+                    Home
+                </a>
+            </li>
+        </ul>
+    </header>
+    <div class="flex items-center justify-center h-screen bg-red-500">
+        <div class="p-2 w-1/2">
+            <lottie-player src="https://lottie.host/ae411402-688a-468f-b63d-6f886e31680d/G4hzQ70xkF.json"
+                background="##fff" speed="1" style="height: 500px" loop autoplay direction="1" mode="normal">
+            </lottie-player>
         </div>
-    </nav>
-
-    <div class="flex items-center justify-center h-screen bg-f1f3f6">
-
-        <div class="p-4 w-full sm:w-1/2">
-            <div class="bg-black p-4 rounded">
+        <div class="p-2 w-1/2">
+            <div class="bg-green-200 p-4 rounded">
                 <div class="flex justify-between mb-4">
-                    <h2 class="mr-2 text-white ">Select a date:</h2>
-                    <!-- <h6 class="text-white">IST</h6> -->
+                    <h2 class="mr-2">Select a date:</h2>
+                    <h6>IST</h6>
                 </div>
-                <div class="flex flex-grow ">
-                    <div id="datepicker" class="rounded  "  ></div>
-                    <div class="ml-4 w-1/2">
-                        <form id="enquiryForm" class="flex flex-col" onsubmit="return validateForm()">
-                            <label for="name" class="text-white">Name:</label>
-                            <input type="text" id="name" name="name" pattern="[A-Za-z ]{3,}" title="Enter name" class="mb-2 w-full p-2 rounded border border-gray-300" required>
-
-                            <label for="mobile" class="text-white">Mobile Number:</label>
-                            <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" title="Enter a valid 10-digit phone number" class="mb-2 w-full p-2 rounded border border-gray-300" required>
-
-                            <label for="email" class="text-white">Email:</label>
-                            <input type="email" id="email" name="email" class="mb-2 w-full p-2 rounded border border-gray-300">
-
-                            <label for="message" class="text-white">Message:</label>
-                            <textarea id="message" name="message" class="mb-2 w-full p-2 rounded border border-gray-300"></textarea>
-
-                            <button type="submit" class="w-full h-100 btn-blue rounded h-10">Enquire</button>
-                        </form>
-                    </div>
+                <div class="flex">
+                    <div id="datepicker" class="rounded w-1/2"></div>
+                </div>
+                <div class="flex justify-center bg-blue-400 mt-3  rounded text-white">
+                    <button id="enquireBtn" class="w-full">Enquire</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
-        var blockedDates = ["2024-01-20", "2024-01-25", "2024-01-30"];
+        // Fetch booked dates from local storage
+        var bookedDates = JSON.parse(localStorage.getItem("bookedDates")) || [];
 
         flatpickr("#datepicker", {
             enableTime: false,
-            dateFormat: "d-m-Y",
+            dateFormat: "Y-m-d",
             inline: true,
-            disable: blockedDates,
+            disable: bookedDates, // Disable the specified dates
         });
 
-        function validateForm() {
+        document.getElementById("enquireBtn").addEventListener("click", function () {
             var selectedDate = document.getElementById("datepicker").value;
-            var name = document.getElementById("name").value;
-            var mobile = document.getElementById("mobile").value;
-
-            // Validate phone number and name
-            if (!selectedDate) {
-                alert("Please select a date");
-                return false;
-            }
-
-            if (!/^\d{10}$/.test(mobile)) {
-                alert("Please enter a valid 10-digit phone number");
-                return false;
-            }
-
-            if (!/^[A-Za-z ]{3,}$/.test(name)) {
-                alert("Please enter a valid name with a minimum of 3 characters, only letters");
-                return false;
-            }
-
-            var email = document.getElementById("email").value;
-            var message = document.getElementById("message").value;
-
-            var whatsappMessage = "Name: " + name + "%0AMobile: " + mobile + "%0AEmail: " + email + "%0AMessage: " + message + "%0ADate: " + selectedDate;
-            var whatsappLink = "https://wa.me/8129957753?text=" + encodeURIComponent(whatsappMessage);
-
+            var message = "Hello, I would like to enquire about the availability on " + selectedDate;
+            var whatsappLink = "https://wa.me/8129957753?text=" + encodeURIComponent(message);
             window.open(whatsappLink, "_blank");
-            return false;
-        }
+        });
     </script>
 </body>
+
 
 </html>
