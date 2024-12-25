@@ -1,105 +1,135 @@
+// Variables
+$mobile_device: "only screen and (max-width: 767px)";
+$tablet_device: "only screen and (min-width: 768px) and (max-width: 991px)";
+$primary-color: #009DFF;
 
-
-// slick-nav
-.mobile_menu{
+// Mobile Menu Styles
+.mobile_menu {
     @media #{$mobile_device} {
         position: absolute;
-        right: 0px;
+        right: 0;
         width: 100%;
         z-index: 9;
     }
 }
-.slicknav_menu{
+
+// Slicknav Menu Container
+.slicknav_menu {
+    @media #{$mobile_device} {
+        display: block;
+        margin-right: 0;
+    }
+
     .slicknav_nav {
         background: #fff;
         float: right;
-        margin-top: 0;
+        margin-top: 5px;
         padding: 0;
         width: 95%;
-        padding: 0;
-        border-radius: 0px;
-        margin-top: 5px;
+        border-radius: 0;
         position: absolute;
         left: 0;
         right: 0;
         margin: auto;
         top: 11px;
-        a{
-            &:hover{
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        a {
+            padding: 10px 15px;
+            color: #333;
+            transition: all 0.3s ease;
+
+            &:hover {
                 background: transparent;
-                color: #009DFF;
+                color: $primary-color;
             }
-            &.active{
-                color: #009DFF;
+
+            &.active {
+                color: $primary-color;
             }
-            i{
-                @media #{$mobile_device} {
-                    display: none;
-                }
-                @media #{$tablet_device} {
+
+            i {
+                @media #{$mobile_device}, #{$tablet_device} {
                     display: none;
                 }
             }
         }
-        .slicknav_btn {
-            background-color: transparent;
-            cursor: pointer;
-            margin-bottom: 10px;
-            margin-top: -40px;
+
+        .slicknav_arrow {
+            float: right;
+            font-size: 22px;
             position: relative;
-            z-index: 99;
-            border: 1px solid #ddd;
-            top: 3px;
-            right: 5px;
-            top: -32px;
-            .slicknav_icon{
-                margin-right: 6px;
-                margin-top: 3px;
-                position: relative;
-                padding-bottom: 3px;
-                top: -11px;
-                right: -5px;
+            top: -9px;
+        }
+    }
+}
+
+// Slicknav Button
+.slicknav_btn {
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+    z-index: 99;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 5px;
+    right: 5px;
+    margin-top: -5px;
+    top: 5px;
+    display: block;
+
+    @media #{$mobile_device} {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .slicknav_icon {
+        margin-right: 6px;
+        margin-top: 3px;
+        position: relative;
+        padding-bottom: 3px;
+        display: inline-block;
+        width: 20px;
+        height: 15px;
+
+        .slicknav_icon-bar {
+            background-color: #333;
+            height: 2px;
+            margin: 3px 0;
+            display: block;
+            transition: all 0.3s ease;
+        }
+    }
+
+    &.slicknav_open {
+        .slicknav_icon-bar {
+            &:first-child {
+                transform: rotate(45deg) translate(4px, 4px);
+            }
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            &:last-child {
+                transform: rotate(-45deg) translate(4px, -4px);
             }
         }
     }
+}
+
+// Hide Desktop Menu on Mobile
+.main-menu {
     @media #{$mobile_device} {
-        margin-right: 0px;
+        display: none;
     }
 }
 
-
-// slick-nav
-.slicknav_nav .slicknav_arrow {
-    float: right;
-    font-size: 22px;
-    position: relative;
-    top: -9px;  
-}
-.slicknav_btn {
-	background-color: transparent;
-	cursor: pointer;
-	margin-bottom: 10px;
-	position: relative;
-	z-index: 99;
-	border: none;
-	border-radius: 3px;
-	top: 5px;
-	padding: 5px;
-	right: 5px;
-	margin-top: -5px;
-	top: -31px;
-}
-.slicknav_btn {
-	background-color: transparent;
-	cursor: pointer;
-	margin-bottom: 10px;
-	position: relative;
-	z-index: 99;
-	border: none;
-	border-radius: 3px;
-	top: 5px;
-	padding: 5px;
-	right: 0;
-	margin-top: -5px;
-	top: -41px;
+// Show Mobile Menu
+.slicknav_menu {
+    display: none;
+    @media #{$mobile_device} {
+        display: block;
+    }
 }

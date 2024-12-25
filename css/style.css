@@ -406,7 +406,7 @@ h3{
 }
 @media (min-width: 768px) and (max-width: 991px){
     .slicknav_menu .slicknav_nav a i{
-        display:none
+        display:block
     }
 }
 .slicknav_menu .slicknav_nav .slicknav_btn{
@@ -466,7 +466,7 @@ h3{
     padding:5px;
     right:0;
     margin-top:-5px;
-    top:-41px
+    /* top:-41px */
 }
 .header-area{
     position:absolute;

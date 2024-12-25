@@ -39,47 +39,121 @@
             color: #ffffff;
         }
     </style>
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
     <!-- Navigation Bar -->
-    <nav class="bg-black p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-white text-lg font-semibold">Avoki</a>
-            <div class="flex space-x-4">
-                <a href="index.html" class="text-white">Home</a>
-                <a href="rooms.html" class="text-white">Dates</a>
-                <a href="about.html" class="text-white">About</a>
-                <a href="contact.html" class="text-white">Contact</a>
-                
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-xl-5 col-lg-6">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="index.html">home</a></li>
+                                        <li><a href="rooms.html">Dates</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <!-- <li><a href="#">blog <i class="ti-angle-down"></i></a> -->
+                                        <!-- <ul class="submenu">
+                                                <li><a href="blog.html">blog</a></li>
+                                                <li><a href="single-blog.html">single-blog</a></li>
+                                            </ul> -->
+                                        </li>
+                                        <!-- <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="elements.html">elements</a></li>
+                                            </ul>
+                                        </li> -->
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2">
+                            <!-- <div class="logo-img">
+                                <a href="index.html">
+                                    <img src="img/logo.png" alt="">
+                                </a>
+                            </div> -->
+                        </div>
+                        <div class="col-xl-5 col-lg-4 d-none d-lg-block">
+                            <div class="book_room">
+                                <div class="socail_links">
+                                    <ul>
+                                        <li>
+                                            <a target="_blank" href="https://www.google.com/">
+                                                <i class="fa fa-facebook-square"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" href="https://www.google.com/">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" href="https://www.google.com/">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="book_btn d-none d-lg-block">
+                                    <a class="popup-with-form" class="active" href="#test-form">Book A Room</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
+    </header>
 
     <div class="flex items-center justify-center h-screen bg-f1f3f6">
 
         <div class="p-4 w-full sm:w-1/2">
-            <div class="bg-black p-4 rounded">
+            <div class="bg-[#009DFF] p-4 rounded">
                 <div class="flex justify-between mb-4">
                     <h2 class="mr-2 text-white ">Select a date:</h2>
                     <!-- <h6 class="text-white">IST</h6> -->
                 </div>
                 <div class="flex flex-grow ">
-                    <div id="datepicker" class="rounded  "  ></div>
+                    <div id="datepicker" class="rounded  "></div>
                     <div class="ml-4 w-1/2">
                         <form id="enquiryForm" class="flex flex-col" onsubmit="return validateForm()">
                             <label for="name" class="text-white">Name:</label>
-                            <input type="text" id="name" name="name" pattern="[A-Za-z ]{3,}" title="Enter name" class="mb-2 w-full p-2 rounded border border-gray-300" required>
+                            <input type="text" id="name" name="name" pattern="[A-Za-z ]{3,}" title="Enter name"
+                                class="mb-2 w-full p-2 rounded border border-gray-300" required>
 
                             <label for="mobile" class="text-white">Mobile Number:</label>
-                            <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" title="Enter a valid 10-digit phone number" class="mb-2 w-full p-2 rounded border border-gray-300" required>
+                            <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}"
+                                title="Enter a valid 10-digit phone number"
+                                class="mb-2 w-full p-2 rounded border border-gray-300" required>
 
                             <label for="email" class="text-white">Email:</label>
-                            <input type="email" id="email" name="email" class="mb-2 w-full p-2 rounded border border-gray-300">
+                            <input type="email" id="email" name="email"
+                                class="mb-2 w-full p-2 rounded border border-gray-300">
 
                             <label for="message" class="text-white">Message:</label>
-                            <textarea id="message" name="message" class="mb-2 w-full p-2 rounded border border-gray-300"></textarea>
+                            <textarea id="message" name="message"
+                                class="mb-2 w-full p-2 rounded border border-gray-300"></textarea>
 
                             <button type="submit" class="w-full h-100 btn-blue rounded h-10">Enquire</button>
                         </form>
@@ -90,13 +164,16 @@
     </div>
 
     <script>
-        var blockedDates = ["2024-01-20", "2024-01-25", "2024-01-30"];
+        var bookedDates = JSON.parse(localStorage.getItem("bookedDates")) || [];
+        
+        bookedDates = bookedDates.map(date => new Date(date).toISOString().split("T")[0]);
+
 
         flatpickr("#datepicker", {
             enableTime: false,
-            dateFormat: "d-m-Y",
+            dateFormat: "Y-m-d",
             inline: true,
-            disable: blockedDates,
+            disable: bookedDates,
         });
 
         function validateForm() {
