@@ -1554,13 +1554,13 @@ h3{
     color:#fff
 }
 .breadcam_bg{
-    background-image:url(../img/banner/bradcam.png)
+    background-image:url(../img/about/111.jpg)
 }
 .breadcam_bg_1{
-    background-image:url(../img/banner/bradcam2.png)
+    background-image:url(../img/about/222.jpg)
 }
 .breadcam_bg_2{
-    background-image:url(../img/banner/bradcam3.png)
+    background-image:url(../img/about/222.jpg)
 }
 .bradcam_area{
     padding:170px;
@@ -3966,3 +3966,275 @@ h1,h2,h3,h4,h5,h6{
     display: block;
 }
 
+
+
+/* General styles for the features room section */
+.features_room1 {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+.container1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.row1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Section title styles */
+.section_title1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section_title1 span {
+    font-size: 18px;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section_title1 h3 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Individual room cards styles */
+.rooms_here1 {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card1, .card2, .card3 {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 350px;
+    /* Light shades for each card */
+    background: linear-gradient(145deg, #f9f9f9, #e3e3e3); /* Light grey gradient for all cards */
+}
+
+.card1 {
+    background: linear-gradient(145deg, #fef9e4, #f1e2b3); /* Soft light yellow gradient */
+}
+
+.card2 {
+    background: linear-gradient(145deg, #e6f7ff, #cceeff); /* Soft light blue gradient */
+}
+
+.card3 {
+    background: linear-gradient(145deg, #f7f0ff, #e6e0ff); /* Soft light purple gradient */
+}
+
+.card_content1, .card_content2, .card_content3 {
+    padding: 30px;
+    text-align: center;
+}
+
+/* Always visible content */
+.card_content1 h3, .card_content2 h3, .card_content3 h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.card_content1 span, .card_content2 span, .card_content3 span {
+    font-size: 18px;
+    color: #e67e22;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.card_content1 p, .card_content2 p, .card_content3 p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Hover and animation effects for cards */
+.card1:hover, .card2:hover, .card3:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card_content1, .card_content2, .card_content3 {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hover effect: Slight content shift */
+.card1:hover .card_content1, .card2:hover .card_content2, .card3:hover .card_content3 {
+    transform: translateY(-10px); /* Slide up slightly */
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+    .rooms_here1 {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .rooms_here1 {
+        gap: 15px;
+    }
+    .card1, .card2, .card3 {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .section_title1 h3 {
+        font-size: 28px;
+    }
+}
+/* General styles for the offers section */
+.offers-section {
+    padding-top: 50px;
+}
+
+.section-title span {
+    color: #888;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.section-title h3 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Styling for the offer cards */
+.offer-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add gradient background to each offer */
+.offer-luxe {
+    background: linear-gradient(145deg, #f5a623, #f79c42);
+}
+
+.offer-prime {
+    background: linear-gradient(145deg, #4b9dd9, #6cbbff);
+}
+
+.offer-classic {
+    background: linear-gradient(145deg, #4caf50, #81c784);
+}
+
+/* Offer card title styles */
+.offer-header h3 {
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+
+/* Offer body styles */
+.offer-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.offer-body ul li {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* Book Now button styles */
+.btn-book-now {
+    display: block;
+    text-align: center;
+    background-color: #fff;
+    color: #333;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 20px auto 0;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hover effects */
+.offer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-book-now:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-2px);
+}
+
+/* Centering the card container */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 20px; /* Space between cards */
+}
+
+/* Styling the individual cards */
+.card {
+    width: 400x;
+    height: 400px;
+    background: linear-gradient(to right, #fbc2eb, #a6c1ee); /* Light gradient */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card content styling */
+.card-content {
+    padding: 20px;
+    color: #333;
+}
+
+/* Heading styling */
+.card h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Paragraph styling */
+.card p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Hover effect for the card */
+.card:hover {
+    transform: translateY(-10px); /* Slight lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+    }
+}
