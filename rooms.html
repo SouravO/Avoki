@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>avoki</title>
+    <title>Avoki Centro Arena</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"> -->
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -34,56 +36,63 @@
 
     <!-- header-start -->
     <header>
-        <div class="header-area ">
+        <div class="header-area">
             <div id="sticky-header" class="main-header-area">
                 <div class="container-fluid p-0">
-                    <div class="row align-items-center no-gutters">
+                    <div class="row items-center">
                         <div class="col-xl-5 col-lg-6">
-                            <div class="main-menu  d-none d-lg-block">
+                            <div class="main-menu hidden lg:block">
                                 <nav>
-                                    <ul id="navigation">
-                                        <li><a href="index.html">home</a></li>
-                                        <li><a class="active" href="rooms.html">Dates</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <!-- <li><a href="#">blog <i class="ti-angle-down"></i></a> -->
-                                            
+                                    <ul id="navigation" class="flex items-center m-0 p-0 list-none">
+                                        <li class="flex items-center">
+                                            <a href="index.html" class="flex items-center p-0 ">
+                                                <img src="./logo.png" alt="Logo" class="w-[100px] h-20 my-2.5 align-middle">
+                                            </a>
                                         </li>
-                                        
+                                        <li class="flex items-center">
+                                            <a class=" px-4 py-3" href="index.html">home</a>
                                         </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li class="flex items-center">
+                                            <a href="rooms.html" class="active px-4 py-3">Dates</a>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <a href="about.html" class="px-4 py-3">About</a>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <a href="contact.html" class="  px-4 py-3">Contact</a>
+                                        </li>
                                     </ul>
                                 </nav>
                             </div>
                         </div>
-                       
-                        <div class="col-xl-5 col-lg-4 d-none d-lg-block">
+                        <div class="col-xl-5 col-lg-4 hidden lg:block">
                             <div class="book_room">
                                 <div class="socail_links">
-                                    <ul>
+                                    <ul class="flex items-center space-x-4">
                                         <li>
-                                            <a href="#">
+                                            <a href="https://www.facebook.com/AvokiCentroArena" class="inline-flex items-center justify-center w-8 h-8 bg-black text-white rounded-full hover:bg-gray-800 transition-colors">
                                                 <i class="fa fa-facebook-square"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
-                                                <i class="fa fa-twitter"></i>
+                                            <a href="https://www.youtube.com/@avokicentroarena" class="inline-flex items-center justify-center w-8 h-8 bg-black text-white rounded-full hover:bg-gray-800 transition-colors">
+                                                <i class="fa fa-youtube"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="https://www.instagram.com/avokicentroarena/" class="inline-flex items-center justify-center w-8 h-8 bg-black text-white rounded-full hover:bg-gray-800 transition-colors">
                                                 <i class="fa fa-instagram"></i>
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="book_btn d-none d-lg-block">
-                                    <a class="popup-with-form" href="#test-form">Book A Dates</a>
+                                <div class="book_btn hidden lg:block">
+                                    <a href="booking.html" class="inline-block px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Book A Dates</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
+                            <div class="mobile_menu block lg:hidden"></div>
                         </div>
                     </div>
                 </div>
@@ -99,129 +108,100 @@
     <!-- bradcam_area_end -->
 
     <!-- offers_area_start -->
-    <div class="offers_area padding_top">
+    <div class="offers-section padding-top">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
-                    <div class="section_title text-center mb-100">
-                        <span>Our Offers</span>
-                        <h3>Ongoing Offers</h3>
+                    <div class="section-title text-center mb-100">
+                        <span>Our Plans</span>
+                        <h3>The Value We Offer</h3>
+                        <h5>Our Offers: The Value We Bring
+
+                            Avoki Center of Arena offers tailored packages to elevate your celebrations. Choose from Avoki Luxe for unmatched luxury, Prime for a blend of elegance and value, or Classic for essential services with timeless charm. Each package ensures exceptional spaces, top-tier amenities, and personalized service, creating unforgettable memories for your most cherished moments.  </h5>
+
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <!-- <div class="col-xl-4 col-md-4">
-                    <div class="single_offers">
-                        <div class="about_thumb">
-                            <img src="img/offers/1.png" alt="">
+            <div class="offers_area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="section_title text-center mb-100">
+                                <span>The Value We Offer</span>
+                                <!-- <h3>Ongoing Offers</h3> -->
+                            </div>
                         </div>
-                        <h3>Up to 35% savings on Club <br> 
-                                rooms and Suites</h3>
-                        <ul>
-                            <li>Luxaries condition</li>
-                            <li>3 Adults & 2 Children size</li>
-                            <li>Sea view side</li>
-                        </ul> -->
-                        <!-- <a href="#" class="book_now">book now</a> -->
                     </div>
-                </div>
-                <div class="col-xl-4 col-md-4">
-                    <div class="single_offers">
-                        <div class="about_thumb">
-                            <img src="img/offers/2.png" alt="">
+                    <div class="row">
+                        <div class="col-xl-4 col-md-4">
+                            <div class="single_offers">
+                                <div class="about_thumb">
+                                    <img src="img/about/a3.jpg" alt="">
+                                </div>
+                                <h3>Up to 35% savings on <br>
+                                    Premium Arena</h3>
+                                <ul>
+                                    <li>[Description coming soon]</li>
+                                    <li>[Description coming soon]</li>
+                                    <li>[Description coming soon]</li>
+                                </ul>
+                                <a href="booking.html" class="book_now">book now</a>
+                            </div>
                         </div>
-                        <h3></h3>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                        <a href="./booking.html" class="book_now">book now</a>
+                        <div class="col-xl-4 col-md-4">
+                            <div class="single_offers">
+                                <div class="about_thumb">
+                                    <img src="img/about/a3.jpg" alt="">
+                                </div>
+                                <h3>Up to 35% savings on <br>
+                                    Mid Arena</h3>
+                                <ul>
+                                    <li>[Description coming soon]</li>
+                                    <li>[Description coming soon]</li>
+                                    <li>[Description coming soon]</li>
+                                </ul>
+                                <a href="booking.html" class="book_now">book now</a>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-4">
+                            <div class="single_offers">
+                                <div class="about_thumb">
+                                    <img src="img/about/a3.jpg" alt="">
+                                </div>
+                                <h3>Up to 35% savings on <br>
+                                    Base Arena</h3>
+                                <ul>
+                                    <li>[Description coming soon]</li>
+                                    <li>[Description coming soon]</li>
+                                    <li>[Description coming soon]</li>
+                                </ul>
+                                <a href="booking.html" class="book_now">book now</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <!-- <div class="col-xl-4 col-md-4">
-                    <div class="single_offers">
-                        <div class="about_thumb">
-                            <img src="img/offers/3.png" alt="">
-                        </div>
-                        <h3>Up to 35% savings on Club <br> 
-                                rooms and Suites</h3>
-                        <ul>
-                            <li>Luxaries condition</li>
-                            <li>3 Adults & 2 Children size</li>
-                            <li>Sea view side</li>
-                        </ul>
-                        <a href="#" class="book_now">book now</a>
-                    </div> -->
                 </div>
             </div>
+            
         </div>
     </div>
+    
+
     <!-- offers_area_end -->
 
     <!-- features_room_startt -->
-    <div class="features_room">
+    <!-- <div class="features_room">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-100">
-                        <span>Featured Rooms</span>
-                        <h3>Choose a Better Room</h3>
-                    </div>
+                        <!-- <span>Featured Rooms</span> -->
+                        <!-- <h3>Choose a Better Room</h3> -->
+                    <!-- </div>
                 </div>
             </div>
         </div>
-        <div class="rooms_here">
-            <div class="single_rooms">
-                <div class="room_thumb">
-                    <img src="img/rooms/1.png" alt="">
-                    <div class="room_heading d-flex justify-content-between align-items-center">
-                        <div class="room_heading_inner">
-                            <span>From $250/night</span>
-                            <h3>Superior Room</h3>
-                        </div>
-                        <a href="#" class="line-button">book now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="single_rooms">
-                <div class="room_thumb">
-                    <img src="img/rooms/2.png" alt="">
-                    <div class="room_heading d-flex justify-content-between align-items-center">
-                        <div class="room_heading_inner">
-                            <span>From $250/night</span>
-                            <h3>Deluxe Room</h3>
-                        </div>
-                        <a href="#" class="line-button">book now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="single_rooms">
-                <div class="room_thumb">
-                    <img src="img/rooms/3.png" alt="">
-                    <div class="room_heading d-flex justify-content-between align-items-center">
-                        <div class="room_heading_inner">
-                            <span>From $250/night</span>
-                            <h3>Signature Room</h3>
-                        </div>
-                        <a href="#" class="line-button">book now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="single_rooms">
-                <div class="room_thumb">
-                    <img src="img/rooms/4.png" alt="">
-                    <div class="room_heading d-flex justify-content-between align-items-center">
-                        <div class="room_heading_inner">
-                            <span>From $250/night</span>
-                            <h3>Couple Room</h3>
-                        </div>
-                        <a href="#" class="line-button">book now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+     
+    </div>  -->
     <!-- features_room_end -->
 
     <!-- forQuery_start -->
@@ -238,7 +218,7 @@
                             </div>
                             <div class="col-xl-6 col-md-6">
                                 <div class="phone_num">
-                                        <a href="#" class="mobile_no">+10 576 377 4789</a>
+                                        <a href="#" class="mobile_no">+91 97787 47656</a>
                                 </div>
                             </div>
                         </div>
@@ -252,7 +232,7 @@
     <!-- instragram_area_start -->
     <div class="instragram_area">
         <div class="single_instagram">
-            <img src="img/instragram/1.png" alt="">
+            <img src="img/about/k1.jpg" alt="">
             <div class="ovrelay">
                 <a href="#">
                     <i class="fa fa-instagram"></i>
@@ -260,7 +240,7 @@
             </div>
         </div>
         <div class="single_instagram">
-            <img src="img/instragram/2.png" alt="">
+            <img src="img/about/k2.jpg" alt="">
             <div class="ovrelay">
                 <a href="#">
                     <i class="fa fa-instagram"></i>
@@ -268,7 +248,7 @@
             </div>
         </div>
         <div class="single_instagram">
-            <img src="img/instragram/3.png" alt="">
+            <img src="img/about/k3.jpg" alt="">
             <div class="ovrelay">
                 <a href="#">
                     <i class="fa fa-instagram"></i>
@@ -276,7 +256,7 @@
             </div>
         </div>
         <div class="single_instagram">
-            <img src="img/instragram/4.png" alt="">
+            <img src="img/about/k4.jpg" alt="">
             <div class="ovrelay">
                 <a href="#">
                     <i class="fa fa-instagram"></i>
@@ -284,7 +264,7 @@
             </div>
         </div>
         <div class="single_instagram">
-            <img src="img/instragram/5.png" alt="">
+            <img src="img/about/k6.jpg" alt="">
             <div class="ovrelay">
                 <a href="#">
                     <i class="fa fa-instagram"></i>
@@ -295,52 +275,58 @@
     <!-- instragram_area_end -->
     
     <!-- footer -->
-    <footer class="footer">
+    <footer class="footer" >
         <div class="footer_top">
-            <div class="container">
+            <div class="">
                 <div class="row">
-                    <div class="col-xl-3 col-md-6 col-lg-3">
+                    <div class="col-xl-2 col-md-6 col-lg-2">
                         <div class="footer_widget">
-                            <h3 class="footer_title">
-                                address
-                            </h3>
-                            <p class="footer_text"> Kottakadavu <br>
-                                Kadalundi , Calicut</p>
-                            <a href="https://maps.app.goo.gl/CZcMiLhHaX4SU8oH7" class="line-button">Get Direction</a>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-3">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Reservation
-                            </h3>
-                            <p class="footer_text">9744771277 <br>
-                                reservation@avokicentroarena.com</p>
+                           <img src="./logo.png" alt="">
                         </div>
                     </div>
                     <div class="col-xl-2 col-md-6 col-lg-2">
                         <div class="footer_widget">
                             <h3 class="footer_title">
-                                Navigation
+                                address
+                            </h3>
+                            <p class="footer_text" > Kottakadavu <br>
+                                   Kadalundi</p>
+                            <a href="https://maps.app.goo.gl/v3fXqqKUuj8YK3up8" class="line-button">Get Direction</a>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                    Reservation
+                            </h3>
+                            <p class="footer_text" >+91 97787 47656  <br>
+                                +91 9447536555
+                                    </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                    Navigation
                             </h3>
                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Dates</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="rooms.html">Dates</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="col-xl-3 col-md-6 col-lg-3">
                         <div class="footer_widget">
                             <h3 class="footer_title">
-                                Enqueries
+                               Enquries
                             </h3>
                             <form action="#" class="newsletter_form">
                                 <input type="text" placeholder="Enter your mail">
-                                <button type="submit">submit</button>
+                                <button type="submit" >Send</button>
                             </form>
-                            <p class="newsletter_text">Mail us your enqueries</p>
+                            <!-- <p class="newsletter_text">Subscribe newsletter to get updates</p> -->
                         </div>
                     </div>
                 </div>
@@ -352,10 +338,8 @@
                 <div class="row">
                     <div class="col-xl-8 col-md-7 col-lg-9">
                         <p class="copy_right">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script> All rights reserved @erhance
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                              
+                        </p>
                     </div>
                     <div class="col-xl-4 col-md-5 col-lg-3">
                         <div class="socail_links">
@@ -383,8 +367,10 @@
         </div>
     </footer>
 
+
+
     <!-- form itself end-->
-    <form id="test-form" class="white-popup-block mfp-hide">
+    <!-- <form id="test-form" class="white-popup-block mfp-hide">
         <div class="popup_box ">
                 <div class="popup_inner">
                     <h3>Check Availability</h3>
@@ -428,7 +414,7 @@
                     </form>
                 </div>
             </div>
-    </form>
+    </form> -->
 <!-- form itself end -->
 
 
